@@ -685,7 +685,27 @@
                 }, 2000);
             }
             const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
-            if (!blob) throw new Error('No blob');
+            if (!blob) throw new Error('Could not create image blob');
+            
+            // 1. Try Mobile Native Share first (better for phones)
+            if (navigator.share && navigator.canShare) {
+                const file = new File([blob], "conversion.png", { type: "image/png" });
+                if (navigator.canShare({ files: [file] })) {
+                    try {
+                        await navigator.share({
+                            title: 'Unit Master',
+                            text: 'Check out this conversion!',
+                            files: [file]
+                        });
+                        showToast('📸 Shared successfully');
+                        return;
+                    } catch (err) {
+                        // User cancelled share or it failed, fall through to clipboard/download
+                    }
+                }
+            }
+
+            // 2. Try Clipboard Copy (better for desktop)
             if (navigator.clipboard && window.ClipboardItem) {
                 try {
                     await navigator.clipboard.write([new ClipboardItem({ [blob.type]: blob })]);
@@ -693,7 +713,8 @@
                     return;
                 } catch (err) { /* fall through */ }
             }
-            // Fallback download
+
+            // 3. Fallback download
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
@@ -702,10 +723,10 @@
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            showToast('📸 Saved as PNG');
+            showToast('📸 Saved to device');
         } catch (err) {
             if (btn) btn.style.display = originalDisplay || '';
-            showToast('❌ Snap failed', true);
+            showToast('❌ ' + (err.message || 'Snap failed'), true);
         }
     }
 
