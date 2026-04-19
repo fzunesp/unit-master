@@ -695,9 +695,8 @@
                 const file = new File([blob], "conversion.png", { type: "image/png" });
                 if (navigator.canShare({ files: [file] })) {
                     try {
+                        // Pass ONLY the file. Adding text/title causes some Android apps to discard the image.
                         await navigator.share({
-                            title: 'Unit Master',
-                            text: 'Check out this conversion!',
                             files: [file]
                         });
                         showToast('📸 Shared successfully');
