@@ -1,0 +1,9 @@
+# Exclude backup files
+convert-all.original.html
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
