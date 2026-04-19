@@ -557,7 +557,7 @@
 
 <div id="toast" class="toast">📸 Ready</div>
 
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"></script>
 <script>
     // ========== MOBILE DETECTION ==========
     function detectAndApplyMobile() {
@@ -668,12 +668,15 @@
         const originalDisplay = btn ? btn.style.display : null;
         if (btn) btn.style.display = 'none';
         try {
-            const canvas = await html2canvas(cardElement, {
-                scale: 3,
+            const blob = await htmlToImage.toBlob(cardElement, {
+                pixelRatio: 3,
                 backgroundColor: null,
-                logging: false,
-                useCORS: true
+                style: {
+                    transform: 'none',
+                    boxShadow: 'none'
+                }
             });
+            
             if (btn) {
                 btn.style.display = originalDisplay || '';
                 btn.classList.add('success');
@@ -684,7 +687,7 @@
                     btn.innerHTML = originalHtml;
                 }, 2000);
             }
-            const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+
             if (!blob) throw new Error('Could not create image blob');
             
             // 1. Try Mobile Native Share first (better for phones)
