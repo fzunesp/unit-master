@@ -689,25 +689,8 @@
             }
 
             if (!blob) throw new Error('Could not create image blob');
-            
-            // 1. Try Mobile Native Share first (better for phones)
-            if (navigator.share && navigator.canShare) {
-                const file = new File([blob], "conversion.png", { type: "image/png" });
-                if (navigator.canShare({ files: [file] })) {
-                    try {
-                        // Pass ONLY the file. Adding text/title causes some Android apps to discard the image.
-                        await navigator.share({
-                            files: [file]
-                        });
-                        showToast('📸 Shared successfully');
-                        return;
-                    } catch (err) {
-                        // User cancelled share or it failed, fall through to clipboard/download
-                    }
-                }
-            }
 
-            // 2. Try Clipboard Copy (better for desktop)
+            // 1. Try Clipboard Copy (better for desktop)
             if (navigator.clipboard && window.ClipboardItem) {
                 try {
                     await navigator.clipboard.write([new ClipboardItem({ [blob.type]: blob })]);
