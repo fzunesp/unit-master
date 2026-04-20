@@ -1,0 +1,17 @@
+{
+  "name": "Unit Master",
+  "short_name": "UnitMaster",
+  "description": "Premium local unit converter and live currency tracker.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#080b14",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
