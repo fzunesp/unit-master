@@ -39,14 +39,27 @@ self.addEventListener('fetch', event => {
     return; // Pass straight through network
   }
 
-  // Network falling back to cache
+  // Cache-first for core assets
+  if (ASSETS.some(asset => url.pathname.endsWith(asset.replace('./', '')))) {
+    event.respondWith(
+      caches.match(event.request).then(cached => {
+        return cached || fetch(event.request).then(response => {
+          const resClone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, resClone));
+          return response;
+        });
+      })
+    );
+    return;
+  }
+
+  // Network-first for everything else
   event.respondWith(
     fetch(event.request)
       .then(response => {
-        // Cache new version dynamically
         if (response.ok && response.type === 'basic') {
-            const resClone = response.clone();
-            caches.open(CACHE_NAME).then(cache => cache.put(event.request, resClone));
+          const resClone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, resClone));
         }
         return response;
       })

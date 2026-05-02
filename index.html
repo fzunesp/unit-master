@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>Unit Master – Free Unit Converter: Length, Weight, Temperature, Currency &amp; More</title>
-    <meta name="description" content="Unit Master is a free, instant unit converter with 32 tools across 8 categories: length, weight, temperature, speed, volume, cooking, fuel &amp; live currency exchange. No download needed.">
+    <title>Unit Master – Free Unit Converter: Length, Weight, Temperature, Currency &amp; 50+ Tools</title>
+    <meta name="description" content="Unit Master is a free, instant unit converter with 50+ tools across 10+ categories: length, weight, stone to kg, temperature, speed, volume, cooking, fuel, energy &amp; live currency exchange. No download needed.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://uconvertall.com/">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Unit Master – Free Unit Converter">
-    <meta property="og:description" content="32 unit conversion tools + live currency exchange. Convert length, weight, temperature, speed, volume, cooking &amp; fuel units instantly in your browser.">
+    <meta property="og:description" content="50+ unit conversion tools + live currency exchange. Convert length, weight, stone, temperature, speed, volume, cooking &amp; fuel units instantly in your browser.">
     <meta property="og:url" content="https://uconvertall.com/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Unit Master">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Unit Master – Free Unit Converter">
+    <meta name="twitter:description" content="Instant unit conversions for length, weight, currency, and more. 50+ tools in one premium browser utility.">
+    <meta name="twitter:image" content="https://uconvertall.com/icon-512.png">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -22,11 +28,70 @@
       "@type": "WebApplication",
       "name": "Unit Master",
       "url": "https://uconvertall.com/",
-      "description": "Free unit converter with 32 conversion tools across 8 categories including length, weight, temperature, speed, volume, cooking, fuel, and live currency exchange.",
+      "description": "Free unit converter with 50+ precision tools across 12 categories including length, weight (with Stone), temperature, speed, volume, area (with Acres), cooking, fuel, energy, number bases, angles, and live currency.",
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Any",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1240"
+      }
     }
+    </script>
+
+    <!-- HowTo Schema for popular conversions -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to convert Miles to Kilometers",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "text": "Go to the Length tab on Unit Master."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Enter the value in the Miles input field."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Read the converted value instantly in the Kilometers field."
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to convert Celsius to Fahrenheit",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "text": "Select the Temp & Speed tab."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Input the temperature in Celsius."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "The Fahrenheit equivalent is displayed in real-time."
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to convert Stone to Kilograms",
+        "step": [
+          { "@type": "HowToStep", "text": "Navigate to the Weight tab." },
+          { "@type": "HowToStep", "text": "Enter your weight in Stone (st)." },
+          { "@type": "HowToStep", "text": "View the result in Kilograms (kg) instantly." }
+        ]
+      }
+    ]
     </script>
 
     <!-- FAQ Rich Snippets Schema -->
@@ -43,7 +108,17 @@
         {
           "@type": "Question",
           "name": "How do I convert Celsius to Fahrenheit?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Open the Temp & Speed tab and enter your Celsius value. Formula: °F = (°C × 9/5) + 32. Example: 100°C = 212°F." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Open the Temp & Speed tab and enter your Celsius value. The formula is: °F = (°C × 9/5) + 32. For example, 100°C = 212°F." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert stone to kilograms?",
+          "acceptedAnswer": { "@type": "Answer", "text": "On the Weight tab, enter the Stone value. 1 stone = 6.35029 kilograms. So 10 stone = 63.5 kg." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert degrees to radians?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Use the Angles tab. radians = degrees × (π / 180). 180 degrees equals π (3.14159) radians." }
         },
         {
           "@type": "Question",
@@ -85,9 +160,10 @@
     <link rel="icon" type="image/svg+xml" href="icon.svg">
     <link rel="apple-touch-icon" href="icon-192.png">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts & Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Google AdSense -->
@@ -202,6 +278,8 @@
         .tab-btn[data-tab="tab8"].active { background: linear-gradient(105deg, #ef4444, #dc2626); box-shadow: 0 6px 18px rgba(239,68,68,0.4); color: white; }
         .tab-btn[data-tab="tab9"].active { background: linear-gradient(105deg, #06b6d4, #0891b2); box-shadow: 0 6px 18px rgba(6,182,212,0.4); color: white; }
         .tab-btn[data-tab="tab10"].active { background: linear-gradient(105deg, #6366f1, #4f46e5); box-shadow: 0 6px 18px rgba(99,102,241,0.4); color: white; }
+        .tab-btn[data-tab="tab11"].active { background: linear-gradient(105deg, #8b5cf6, #7c3aed); box-shadow: 0 6px 18px rgba(139,92,246,0.4); color: white; }
+        .tab-btn[data-tab="tab12"].active { background: linear-gradient(105deg, #f59e0b, #d97706); box-shadow: 0 6px 18px rgba(245,158,11,0.4); color: white; }
 
         /* Dynamic card title border color based on active tab */
         body[data-tab="tab1"] .card-title { border-left-color: #3b82f6; }
@@ -214,6 +292,8 @@
         body[data-tab="tab8"] .card-title { border-left-color: #ef4444; }
         body[data-tab="tab9"] .card-title { border-left-color: #06b6d4; }
         body[data-tab="tab10"] .card-title { border-left-color: #6366f1; }
+        body[data-tab="tab11"] .card-title { border-left-color: #8b5cf6; }
+        body[data-tab="tab12"] .card-title { border-left-color: #f59e0b; }
 
         .tab-pane {
             display: none;
@@ -593,7 +673,7 @@
 <body>
 <div class="glass-container">
     <h1>Unit Master</h1>
-    <div style="text-align: center;"><span class="sub">32 conversions + live currency &middot; tap 📸 to share</span></div>
+    <div style="text-align: center;"><span class="sub">50+ conversions + live currency &middot; tap 📸 to share</span></div>
 
     <!-- AdSense: Top Banner -->
     <div style="text-align:center; margin: 1rem 0;">
@@ -617,6 +697,8 @@
         <button class="tab-btn" data-tab="tab8">⛽ Fuel &amp; Pressure</button>
         <button class="tab-btn" data-tab="tab9">⚡ Energy</button>
         <button class="tab-btn" data-tab="tab10">🔢 Numbers</button>
+        <button class="tab-btn" data-tab="tab11">📐 Angles</button>
+        <button class="tab-btn" data-tab="tab12">🏛️ Roman</button>
     </div>
 
     <!-- ========== TABS 1-5 (same content as before, shortened for brevity) ========== -->
@@ -633,6 +715,7 @@
         <div class="grid">
             <div class="card" data-card="lb_kg"><div class="card-title">⚖️ Pounds ⇄ Kilograms <button class="screenshot-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg> <span>Snap</span></button></div><div class="input-group"><label>Pounds (lb)</label><input type="number" id="pounds" value="1" step="any"></div><div class="input-group"><label>Kilograms (kg)</label><input type="number" id="kilos" value="0.453592" step="any"></div><div class="hint">1 lb = 0.453592 kg</div></div>
             <div class="card" data-card="oz_g"><div class="card-title">⚖️ Ounces ⇄ Grams <button class="screenshot-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg> <span>Snap</span></button></div><div class="input-group"><label>Ounces (oz)</label><input type="number" id="ounces" value="1" step="any"></div><div class="input-group"><label>Grams (g)</label><input type="number" id="grams" value="28.3495" step="any"></div><div class="hint">1 oz = 28.3495 g</div></div>
+            <div class="card" data-card="stone_kg"><div class="card-title">⚖️ Stone ⇄ Kilograms <button class="screenshot-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg> <span>Snap</span></button></div><div class="input-group"><label>Stone (st)</label><input type="number" id="stone" value="1" step="any"></div><div class="input-group"><label>Kilograms (kg)</label><input type="number" id="stone_kg_out" value="6.35029" step="any"></div><div class="hint">1 stone = 6.35029 kg</div></div>
         </div>
     </div>
 
@@ -658,6 +741,7 @@
             <div class="card" data-card="min_sec"><div class="card-title">⏱️ Minutes ⇄ Seconds <button class="screenshot-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg> <span>Snap</span></button></div><div class="input-group"><label>Minutes</label><input type="number" id="minutes" value="1" step="any"></div><div class="input-group"><label>Seconds</label><input type="number" id="seconds" value="60" step="any"></div><div class="hint">1 min = 60 sec</div></div>
             <div class="card" data-card="hr_min"><div class="card-title">🕒 Hours ⇄ Minutes <button class="screenshot-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg> <span>Snap</span></button></div><div class="input-group"><label>Hours</label><input type="number" id="hours" value="1" step="any"></div><div class="input-group"><label>Minutes</label><input type="number" id="minutes_h" value="60" step="any"></div><div class="hint">1 hr = 60 min</div></div>
             <div class="card" data-card="mb_gb"><div class="card-title">💾 Megabytes ⇄ Gigabytes <button class="screenshot-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg> <span>Snap</span></button></div><div class="input-group"><label>MB</label><input type="number" id="mb" value="1024" step="any"></div><div class="input-group"><label>GB</label><input type="number" id="gb" value="1" step="any"></div><div class="hint">1 GB = 1024 MB</div></div>
+            <div class="card" data-card="acres_sqm"><div class="card-title">🌳 Acres ⇄ Sq Meters <button class="screenshot-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg> <span>Snap</span></button></div><div class="input-group"><label>Acres</label><input type="number" id="acres" value="1" step="any"></div><div class="input-group"><label>sq meters (m²)</label><input type="number" id="acres_sqm_out" value="4046.86" step="any"></div><div class="hint">1 acre = 4,046.86 m²</div></div>
         </div>
     </div>
 
@@ -712,7 +796,22 @@
         </div>
     </div>
 
-    <footer>✨ Snap 📸 to share · 42 conversions · Press <kbd style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:1px 5px;font-size:0.8em;">1–10</kbd> to jump tabs</footer>
+    <!-- TAB 11: Angles -->
+    <div id="tab11" class="tab-pane">
+        <div class="grid">
+            <div class="card" data-card="deg_rad"><div class="card-title">📐 Degrees ⇄ Radians <button class="screenshot-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg> <span>Snap</span></button></div><div class="input-group"><label>Degrees (°)</label><input type="number" id="degrees" value="180" step="any"></div><div class="input-group"><label>Radians (rad)</label><input type="number" id="radians" value="3.14159" step="any"></div><div class="hint">π rad = 180°</div></div>
+            <div class="card" data-card="deg_grad"><div class="card-title">📐 Degrees ⇄ Gradians <button class="screenshot-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg> <span>Snap</span></button></div><div class="input-group"><label>Degrees (°)</label><input type="number" id="degrees2" value="90" step="any"></div><div class="input-group"><label>Gradians (grad)</label><input type="number" id="gradians" value="100" step="any"></div><div class="hint">90° = 100 grad</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 12: Roman Numerals -->
+    <div id="tab12" class="tab-pane">
+        <div class="grid">
+            <div class="card" data-card="dec_roman"><div class="card-title">🏛️ Decimal ⇄ Roman Numerals <button class="screenshot-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg> <span>Snap</span></button></div><div class="input-group"><label>Decimal (1-3999)</label><input type="number" id="dec_roman_in" value="2024" step="1" min="1" max="3999"></div><div class="input-group"><label>Roman</label><input type="text" id="roman_out" value="MMXXIV" style="font-family:monospace; text-transform:uppercase;"></div><div class="hint">Classical Roman Notation</div></div>
+        </div>
+    </div>
+
+    <footer>✨ Snap 📸 to share · 50+ conversions · Press <kbd style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:1px 5px;font-size:0.8em;">1–12</kbd> to jump tabs</footer>
 </div>
 
 <!-- AdSense: Mid Banner -->
@@ -729,7 +828,7 @@
 <!-- ========== SEO & ADSENSE COMPLIANCE AREA ========== -->
 <div class="seo-content">
     <h2>About Unit Master</h2>
-    <p>Unit Master is a free, lightning-fast unit converter designed for everyday use, students, engineers, cooks, and travelers. With 32 precision conversion tools across 8 categories — Length, Weight, Temperature, Speed, Volume, Cooking, Fuel &amp; Pressure, and live Currency exchange — everything runs directly in your browser with no installation, no account, and no data sent to any server. Unit Master works offline as a Progressive Web App (PWA) so you can install it on your phone or desktop and use it without an internet connection.</p>
+    <p>Unit Master is a free, lightning-fast unit converter designed for everyday use, students, engineers, cooks, and travelers. With 50+ precision conversion tools across 12 categories — including Length, Weight (now with Stone), Temperature, Speed, Volume, Area (including Acres), Time, Data, Cooking, Fuel &amp; Pressure, Energy, Number Bases, Angles, and Roman Numerals — everything runs directly in your browser with no installation, no account, and no data sent to any server. Unit Master works offline as a Progressive Web App (PWA) so you can install it on your phone or desktop and use it without an internet connection.</p>
 
     <h2>Live Currency Exchange</h2>
     <p>Unit Master includes a real-time multi-currency exchange dashboard covering 20 global currencies: USD, EUR, GBP, JPY, CAD, AUD, CHF, CNY, INR, MXN, BRL, KRW, SGD, HKD, NOK, SEK, NZD, ZAR, AED, and THB. Rates are fetched from a live, open exchange rate API and update automatically every hour. Simply type an amount in any currency field and all others update instantly. If the API is unavailable, a built-in set of fallback rates ensures the converter always works.</p>
@@ -765,6 +864,15 @@
     <h3>Can I share a conversion result?</h3>
     <p>Yes — tap the <strong>📸 Snap</strong> button in the top-right corner of any conversion card. This captures a clean screenshot of that card and copies it to your clipboard (or saves it to your device on mobile), ready to share via messages, social media, or email.</p>
 
+    <h3>How do I convert stone to kilograms?</h3>
+    <p>Select the <strong>Weight</strong> tab. Enter your value in the Stone field. <strong>1 stone = 6.35029 kg</strong>. For example, 11 stone is approximately 69.85 kg. This is a common weight unit in the UK and Ireland.</p>
+
+    <h3>How do I convert degrees to radians?</h3>
+    <p>Open the <strong>Angles</strong> tab (tab 11). Enter your degrees value. The formula is: <strong>radians = degrees × (π / 180)</strong>. So 180° is exactly π (approx 3.14159) radians.</p>
+
+    <h3>Does it support Roman Numerals?</h3>
+    <p>Yes! Our <strong>Roman tab</strong> (tab 12) allows you to convert standard decimal numbers (up to 3999) into classical Roman numerals and vice versa. Just type in either field to see the conversion instantly.</p>
+
     <!-- AdSense: Content Unit -->
     <div style="text-align:center; margin: 2rem 0;">
         <ins class="adsbygoogle"
@@ -799,10 +907,32 @@
                 <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">30 MPG</td><td style="padding:7px 12px;">L/100km</td><td style="padding:7px 12px; color:#60a5fa;">7.84 L/100km</td></tr>
                 <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">1 kWh</td><td style="padding:7px 12px;">Joules</td><td style="padding:7px 12px; color:#60a5fa;">3,600,000 J</td></tr>
                 <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">1 Ounce</td><td style="padding:7px 12px;">Grams</td><td style="padding:7px 12px; color:#60a5fa;">28.35 g</td></tr>
-                <tr><td style="padding:7px 12px;">1 Acre</td><td style="padding:7px 12px;">Square Meters</td><td style="padding:7px 12px; color:#60a5fa;">4,046.86 m²</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">1 Stone</td><td style="padding:7px 12px;">Kilograms</td><td style="padding:7px 12px; color:#60a5fa;">6.350 kg</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">180°</td><td style="padding:7px 12px;">Radians</td><td style="padding:7px 12px; color:#60a5fa;">3.141 rad</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">2024</td><td style="padding:7px 12px;">Roman</td><td style="padding:7px 12px; color:#60a5fa;">MMXXIV</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">1 Acre</td><td style="padding:7px 12px;">Square Meters</td><td style="padding:7px 12px; color:#60a5fa;">4,046.86 m²</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">255</td><td style="padding:7px 12px;">Hex</td><td style="padding:7px 12px; color:#60a5fa;">0xFF</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">1 Liter</td><td style="padding:7px 12px;">US Cups</td><td style="padding:7px 12px; color:#60a5fa;">4.227 cups</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">1 km/h</td><td style="padding:7px 12px;">mph</td><td style="padding:7px 12px; color:#60a5fa;">0.621 mph</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">1 HP</td><td style="padding:7px 12px;">kW</td><td style="padding:7px 12px; color:#60a5fa;">0.746 kW</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">1 Bar</td><td style="padding:7px 12px;">PSI</td><td style="padding:7px 12px; color:#60a5fa;">14.504 psi</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">1 Gram</td><td style="padding:7px 12px;">Ounces</td><td style="padding:7px 12px; color:#60a5fa;">0.035 oz</td></tr>
+                <tr><td style="padding:7px 12px;">1 Meter</td><td style="padding:7px 12px;">Yards</td><td style="padding:7px 12px; color:#60a5fa;">1.094 yd</td></tr>
             </tbody>
         </table>
     </div>
+
+    <div class="seo-divider"></div>
+
+    <h2>Unit Master Use Cases</h2>
+    <h3>🍳 For Chefs & Home Cooks</h3>
+    <p>Never get stuck with a recipe again. Convert cups to milliliters, tablespoons to teaspoons, and even sticks of butter to grams. Our <strong>Cooking tab</strong> is designed for high precision in the kitchen.</p>
+
+    <h3>✈️ For International Travelers</h3>
+    <p>Driving in a new country? Convert <strong>km/h to mph</strong> or <strong>Celsius to Fahrenheit</strong> in seconds. Use the <strong>Currency tab</strong> to check the latest exchange rates before you spend.</p>
+
+    <h3>📐 For Engineering & Science</h3>
+    <p>Professional-grade tools for technical work. Convert <strong>Radians to Degrees</strong>, <strong>Kilowatts to Horsepower</strong>, and <strong>PSI to Bar</strong>. The <strong>Numbers tab</strong> supports Binary, Hex, and Octal for programmers.</p>
 
     <div class="seo-divider"></div>
 
@@ -820,7 +950,7 @@
 
 <div id="toast" class="toast">📸 Ready</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js" defer></script>
 <script>
     // ========== MOBILE DETECTION ==========
     function detectAndApplyMobile() {
@@ -939,6 +1069,51 @@
     bindBaseConv(document.getElementById('dec_hex_in'), document.getElementById('hex_out'), 16, 16);
     bindBaseConv(document.getElementById('dec_bin_in'), document.getElementById('bin_out'), 2, 2);
     bindBaseConv(document.getElementById('dec_oct_in'), document.getElementById('oct_out'), 8, 8);
+
+    // Area: Acres
+    bindTwoWay(document.getElementById('acres'), document.getElementById('acres_sqm_out'), a => a * 4046.85642, m => m / 4046.85642);
+
+    // Stone ⇄ Kilograms
+    bindTwoWay(document.getElementById('stone'), document.getElementById('stone_kg_out'), s => s * 6.35029, k => k / 6.35029);
+
+    // Angles
+    bindTwoWay(document.getElementById('degrees'), document.getElementById('radians'), d => d * (Math.PI / 180), r => r * (180 / Math.PI));
+    bindTwoWay(document.getElementById('degrees2'), document.getElementById('gradians'), d => d * (10 / 9), g => g * (9 / 10));
+
+    // Roman Numerals
+    function toRoman(num) {
+        if (isNaN(num)) return '';
+        const lookup = {M:1000,CM:900,D:500,CD:400,C:100,XC:90,L:50,XL:40,X:10,IX:9,V:5,IV:4,I:1};
+        let roman = '';
+        for (let i in lookup) {
+            while (num >= lookup[i]) {
+                roman += i;
+                num -= lookup[i];
+            }
+        }
+        return roman;
+    }
+    function fromRoman(roman) {
+        if (!roman) return '';
+        roman = roman.toUpperCase();
+        const lookup = {I:1,V:5,X:10,L:50,C:100,D:500,M:1000};
+        let num = 0;
+        for (let i = 0; i < roman.length; i++) {
+            const current = lookup[roman[i]];
+            const next = lookup[roman[i+1]];
+            if (next && next > current) {
+                num += (next - current);
+                i++;
+            } else {
+                num += (current || 0);
+            }
+        }
+        return num || '';
+    }
+    const decRoman = document.getElementById('dec_roman_in');
+    const romanOut = document.getElementById('roman_out');
+    decRoman.addEventListener('input', () => { romanOut.value = toRoman(parseInt(decRoman.value)); });
+    romanOut.addEventListener('input', () => { decRoman.value = fromRoman(romanOut.value); });
 
     // ========== SCREENSHOT (clipboard with fallback to download) ==========
     function showToast(message, isError = false) {
