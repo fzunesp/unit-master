@@ -1,11 +1,15 @@
 {
-  "name": "Unit Master",
-  "short_name": "UnitMaster",
-  "description": "Premium local unit converter and live currency tracker.",
+  "name": "Unit Master – Free Unit Converter",
+  "short_name": "Unit Master",
+  "description": "32 free unit conversion tools + live currency exchange. Convert length, weight, temperature, speed, volume, energy, cooking, fuel & more — instantly in your browser.",
   "start_url": "./",
+  "scope": "./",
+  "lang": "en",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#080b14",
   "theme_color": "#0f172a",
+  "categories": ["utilities", "productivity"],
   "icons": [
     {
       "src": "icon-192.png",

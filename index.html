@@ -29,6 +29,56 @@
     }
     </script>
 
+    <!-- FAQ Rich Snippets Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I convert miles to kilometers?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Enter your value in the Miles field on the Length tab. The formula is: 1 mile = 1.60934 kilometers. So 10 miles = 16.09 km." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert Celsius to Fahrenheit?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Open the Temp & Speed tab and enter your Celsius value. Formula: °F = (°C × 9/5) + 32. Example: 100°C = 212°F." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert pounds to kilograms?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Open the Weight tab and enter pounds. Formula: 1 pound = 0.453592 kg. So 150 lbs = 68.04 kg." }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate are the currency exchange rates?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Rates are fetched from a live open currency API updated daily. They reflect mid-market values, ideal for travel and reference. For financial transactions, consult your bank." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Unit Master work offline?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Unit Master is a PWA. Install it to your home screen and all unit converters work offline. Live currency requires internet but falls back to built-in rates offline." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert gallons to liters?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Open the Volume tab and enter gallons. Formula: 1 US gallon = 3.78541 liters. So a 20-gallon tank holds about 75.7 liters." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert MPG to L/100km?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Go to the Fuel & Pressure tab and enter MPG. Formula: L/100km = 235.215 ÷ MPG. So 30 MPG ≈ 7.84 L/100km." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I share a conversion result?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tap the Snap button on any card to copy a screenshot to your clipboard or download it to your device for sharing." }
+        }
+      ]
+    }
+    </script>
+
     <!-- PWA Setup -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#080b14">
@@ -150,6 +200,8 @@
         .tab-btn[data-tab="tab6"].active { background: linear-gradient(105deg, #eab308, #ca8a04); box-shadow: 0 6px 18px rgba(234,179,8,0.4); color: white; }
         .tab-btn[data-tab="tab7"].active { background: linear-gradient(105deg, #ec4899, #db2777); box-shadow: 0 6px 18px rgba(236,72,153,0.4); color: white; }
         .tab-btn[data-tab="tab8"].active { background: linear-gradient(105deg, #ef4444, #dc2626); box-shadow: 0 6px 18px rgba(239,68,68,0.4); color: white; }
+        .tab-btn[data-tab="tab9"].active { background: linear-gradient(105deg, #06b6d4, #0891b2); box-shadow: 0 6px 18px rgba(6,182,212,0.4); color: white; }
+        .tab-btn[data-tab="tab10"].active { background: linear-gradient(105deg, #6366f1, #4f46e5); box-shadow: 0 6px 18px rgba(99,102,241,0.4); color: white; }
 
         /* Dynamic card title border color based on active tab */
         body[data-tab="tab1"] .card-title { border-left-color: #3b82f6; }
@@ -160,6 +212,8 @@
         body[data-tab="tab6"] .card-title { border-left-color: #eab308; }
         body[data-tab="tab7"] .card-title { border-left-color: #ec4899; }
         body[data-tab="tab8"] .card-title { border-left-color: #ef4444; }
+        body[data-tab="tab9"] .card-title { border-left-color: #06b6d4; }
+        body[data-tab="tab10"] .card-title { border-left-color: #6366f1; }
 
         .tab-pane {
             display: none;
@@ -555,12 +609,14 @@
     <div class="tabs">
         <button class="tab-btn active" data-tab="tab1">📏 Length</button>
         <button class="tab-btn" data-tab="tab2">⚖️ Weight</button>
-        <button class="tab-btn" data-tab="tab3">🌡️ Temp & Speed</button>
+        <button class="tab-btn" data-tab="tab3">🌡️ Temp &amp; Speed</button>
         <button class="tab-btn" data-tab="tab4">🥄 Volume</button>
-        <button class="tab-btn" data-tab="tab5">📐 Area & Time & Data</button>
+        <button class="tab-btn" data-tab="tab5">📐 Area &amp; Time &amp; Data</button>
         <button class="tab-btn" data-tab="tab6">💰 Currency</button>
         <button class="tab-btn" data-tab="tab7">🍳 Cooking</button>
-        <button class="tab-btn" data-tab="tab8">⛽ Fuel & Pressure</button>
+        <button class="tab-btn" data-tab="tab8">⛽ Fuel &amp; Pressure</button>
+        <button class="tab-btn" data-tab="tab9">⚡ Energy</button>
+        <button class="tab-btn" data-tab="tab10">🔢 Numbers</button>
     </div>
 
     <!-- ========== TABS 1-5 (same content as before, shortened for brevity) ========== -->
@@ -637,7 +693,26 @@
         </div>
     </div>
 
-    <footer>✨ Snap 📸 to share · 32 conversions · Press <kbd style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:1px 5px;font-size:0.8em;">1–8</kbd> to jump tabs</footer>
+    <!-- TAB 9: Energy -->
+    <div id="tab9" class="tab-pane">
+        <div class="grid">
+            <div class="card" data-card="kwh_j"><div class="card-title">⚡ kWh ⇄ Joules <button class="screenshot-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg> <span>Snap</span></button></div><div class="input-group"><label>kWh</label><input type="number" id="kwh" value="1" step="any"></div><div class="input-group"><label>Joules (J)</label><input type="number" id="joules" value="3600000" step="any"></div><div class="hint">1 kWh = 3,600,000 J</div></div>
+            <div class="card" data-card="kcal_kj"><div class="card-title">🔥 Calories ⇄ Kilojoules <button class="screenshot-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg> <span>Snap</span></button></div><div class="input-group"><label>kcal</label><input type="number" id="kcal" value="1" step="any"></div><div class="input-group"><label>kJ</label><input type="number" id="kj" value="4.184" step="any"></div><div class="hint">1 kcal = 4.184 kJ</div></div>
+            <div class="card" data-card="btu_kj"><div class="card-title">🌡️ BTU ⇄ Kilojoules <button class="screenshot-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg> <span>Snap</span></button></div><div class="input-group"><label>BTU</label><input type="number" id="btu" value="1" step="any"></div><div class="input-group"><label>kJ</label><input type="number" id="btu_kj_out" value="1.05506" step="any"></div><div class="hint">1 BTU = 1.05506 kJ</div></div>
+            <div class="card" data-card="w_btuh"><div class="card-title">💡 Watts ⇄ BTU/hr <button class="screenshot-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg> <span>Snap</span></button></div><div class="input-group"><label>Watts (W)</label><input type="number" id="watts" value="1" step="any"></div><div class="input-group"><label>BTU/hr</label><input type="number" id="btuh" value="3.41214" step="any"></div><div class="hint">1 W = 3.41214 BTU/hr</div></div>
+        </div>
+    </div>
+
+    <!-- TAB 10: Number Bases -->
+    <div id="tab10" class="tab-pane">
+        <div class="grid">
+            <div class="card" data-card="dec_hex"><div class="card-title">🔢 Decimal ⇄ Hexadecimal <button class="screenshot-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg> <span>Snap</span></button></div><div class="input-group"><label>Decimal</label><input type="number" id="dec_hex_in" value="255" step="1" min="0"></div><div class="input-group"><label>Hex (0x)</label><input type="text" id="hex_out" value="FF" style="font-family:monospace;"></div><div class="hint">Base 10 → Base 16</div></div>
+            <div class="card" data-card="dec_bin"><div class="card-title">💻 Decimal ⇄ Binary <button class="screenshot-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg> <span>Snap</span></button></div><div class="input-group"><label>Decimal</label><input type="number" id="dec_bin_in" value="42" step="1" min="0"></div><div class="input-group"><label>Binary</label><input type="text" id="bin_out" value="101010" style="font-family:monospace;"></div><div class="hint">Base 10 → Base 2</div></div>
+            <div class="card" data-card="dec_oct"><div class="card-title">8️⃣ Decimal ⇄ Octal <button class="screenshot-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg> <span>Snap</span></button></div><div class="input-group"><label>Decimal</label><input type="number" id="dec_oct_in" value="64" step="1" min="0"></div><div class="input-group"><label>Octal</label><input type="text" id="oct_out" value="100" style="font-family:monospace;"></div><div class="hint">Base 10 → Base 8</div></div>
+        </div>
+    </div>
+
+    <footer>✨ Snap 📸 to share · 42 conversions · Press <kbd style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:1px 5px;font-size:0.8em;">1–10</kbd> to jump tabs</footer>
 </div>
 
 <!-- AdSense: Mid Banner -->
@@ -666,28 +741,28 @@
 
     <h2>Frequently Asked Questions</h2>
 
-    <h2>How do I convert miles to kilometers?</h2>
+    <h3>How do I convert miles to kilometers?</h3>
     <p>Click the <strong>Temp &amp; Speed</strong> tab (tab 3) or directly use the <strong>Length</strong> tab. Enter your miles value in the Miles field and the kilometers value will update instantly. The formula is: <strong>1 mile = 1.60934 kilometers</strong>. So 10 miles = 16.09 km.</p>
 
-    <h2>How do I convert Celsius to Fahrenheit?</h2>
+    <h3>How do I convert Celsius to Fahrenheit?</h3>
     <p>Open the <strong>Temp &amp; Speed</strong> tab and enter your Celsius value. The Fahrenheit result appears immediately. The formula is: <strong>°F = (°C × 9/5) + 32</strong>. For example, 100°C = 212°F (boiling point of water).</p>
 
-    <h2>How do I convert pounds to kilograms?</h2>
+    <h3>How do I convert pounds to kilograms?</h3>
     <p>Click the <strong>Weight</strong> tab and type your value in the Pounds field. The kilogram equivalent updates in real time. The exact conversion is: <strong>1 pound = 0.453592 kilograms</strong>. So 150 lbs = 68.04 kg.</p>
 
-    <h2>How accurate are the currency exchange rates?</h2>
+    <h3>How accurate are the currency exchange rates?</h3>
     <p>Unit Master fetches live exchange rates from a public currency API updated daily. Rates reflect mid-market values and are suitable for reference and travel planning. For large financial transactions, always consult your bank or a licensed financial service for official rates.</p>
 
-    <h2>Does Unit Master work offline?</h2>
+    <h3>Does Unit Master work offline?</h3>
     <p>Yes! Unit Master is a Progressive Web App (PWA). You can install it to your home screen on Android or iOS, and it will work fully offline for all unit conversions. The live currency tab requires an internet connection to fetch the latest rates, but falls back to built-in reference rates when offline.</p>
 
-    <h2>How do I convert gallons to liters?</h2>
+    <h3>How do I convert gallons to liters?</h3>
     <p>Open the <strong>Volume</strong> tab and enter the number of gallons. The liter result appears instantly. <strong>1 US gallon = 3.78541 liters</strong>. For example, a 20-gallon tank holds approximately 75.7 liters.</p>
 
-    <h2>How do I convert MPG to L/100km?</h2>
+    <h3>How do I convert MPG to L/100km?</h3>
     <p>Go to the <strong>Fuel &amp; Pressure</strong> tab and enter your MPG value. The L/100km equivalent updates automatically. The formula is: <strong>L/100km = 235.215 ÷ MPG</strong>. So 30 MPG ≈ 7.84 L/100km — a common fuel economy benchmark.</p>
 
-    <h2>Can I share a conversion result?</h2>
+    <h3>Can I share a conversion result?</h3>
     <p>Yes — tap the <strong>📸 Snap</strong> button in the top-right corner of any conversion card. This captures a clean screenshot of that card and copies it to your clipboard (or saves it to your device on mobile), ready to share via messages, social media, or email.</p>
 
     <!-- AdSense: Content Unit -->
@@ -699,6 +774,34 @@
              data-ad-format="auto"
              data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div class="seo-divider"></div>
+
+    <h2>Popular Conversion Reference</h2>
+    <p>Quick-reference values for the most frequently searched unit conversions:</p>
+    <div style="overflow-x:auto; margin: 1rem 0;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.82rem; color:#94a3b8;">
+            <thead>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                    <th style="text-align:left; padding:8px 12px; color:#cbd5e1;">Convert From</th>
+                    <th style="text-align:left; padding:8px 12px; color:#cbd5e1;">Convert To</th>
+                    <th style="text-align:left; padding:8px 12px; color:#cbd5e1;">Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">1 Mile</td><td style="padding:7px 12px;">Kilometers</td><td style="padding:7px 12px; color:#60a5fa;">1.609 km</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">1 Kilogram</td><td style="padding:7px 12px;">Pounds</td><td style="padding:7px 12px; color:#60a5fa;">2.205 lb</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">100°F</td><td style="padding:7px 12px;">Celsius</td><td style="padding:7px 12px; color:#60a5fa;">37.78°C</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">1 US Gallon</td><td style="padding:7px 12px;">Liters</td><td style="padding:7px 12px; color:#60a5fa;">3.785 L</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">1 Inch</td><td style="padding:7px 12px;">Centimeters</td><td style="padding:7px 12px; color:#60a5fa;">2.54 cm</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">1 Foot</td><td style="padding:7px 12px;">Meters</td><td style="padding:7px 12px; color:#60a5fa;">0.3048 m</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">30 MPG</td><td style="padding:7px 12px;">L/100km</td><td style="padding:7px 12px; color:#60a5fa;">7.84 L/100km</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">1 kWh</td><td style="padding:7px 12px;">Joules</td><td style="padding:7px 12px; color:#60a5fa;">3,600,000 J</td></tr>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:7px 12px;">1 Ounce</td><td style="padding:7px 12px;">Grams</td><td style="padding:7px 12px; color:#60a5fa;">28.35 g</td></tr>
+                <tr><td style="padding:7px 12px;">1 Acre</td><td style="padding:7px 12px;">Square Meters</td><td style="padding:7px 12px; color:#60a5fa;">4,046.86 m²</td></tr>
+            </tbody>
+        </table>
     </div>
 
     <div class="seo-divider"></div>
@@ -810,6 +913,32 @@
     bindTwoWay(psi, bar, p => p * 0.0689476, b => b / 0.0689476);
     bindTwoWay(psi2, kpa, p => p * 6.89476, k => k / 6.89476);
     bindTwoWay(hp, kw, h => h * 0.745699, k => k / 0.745699);
+    // Energy
+    const kwh = document.getElementById('kwh'), joules = document.getElementById('joules');
+    const kcal = document.getElementById('kcal'), kj = document.getElementById('kj');
+    const btu = document.getElementById('btu'), btu_kj_out = document.getElementById('btu_kj_out');
+    const watts = document.getElementById('watts'), btuh = document.getElementById('btuh');
+    bindTwoWay(kwh, joules, k => k * 3600000, j => j / 3600000);
+    bindTwoWay(kcal, kj, c => c * 4.184, k => k / 4.184);
+    bindTwoWay(btu, btu_kj_out, b => b * 1.05506, k => k / 1.05506);
+    bindTwoWay(watts, btuh, w => w * 3.41214, b => b / 3.41214);
+    // Number Bases (one-way: decimal drives hex/bin/oct; text input drives back)
+    function bindBaseConv(decInput, outInput, toBase, fromBase) {
+        if (!decInput || !outInput) return;
+        decInput.addEventListener('input', () => {
+            const v = parseInt(decInput.value);
+            outInput.value = isNaN(v) || v < 0 ? '' : v.toString(toBase).toUpperCase();
+        });
+        outInput.addEventListener('input', () => {
+            const v = parseInt(outInput.value, fromBase);
+            decInput.value = isNaN(v) ? '' : v;
+        });
+        const v = parseInt(decInput.value);
+        if (!isNaN(v)) outInput.value = v.toString(toBase).toUpperCase();
+    }
+    bindBaseConv(document.getElementById('dec_hex_in'), document.getElementById('hex_out'), 16, 16);
+    bindBaseConv(document.getElementById('dec_bin_in'), document.getElementById('bin_out'), 2, 2);
+    bindBaseConv(document.getElementById('dec_oct_in'), document.getElementById('oct_out'), 8, 8);
 
     // ========== SCREENSHOT (clipboard with fallback to download) ==========
     function showToast(message, isError = false) {
