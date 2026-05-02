@@ -3,15 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>✨ Unit Master – Mobile Ready</title>
-    
+    <title>Unit Master – Free Unit Converter: Length, Weight, Temperature, Currency &amp; More</title>
+    <meta name="description" content="Unit Master is a free, instant unit converter with 32 tools across 8 categories: length, weight, temperature, speed, volume, cooking, fuel &amp; live currency exchange. No download needed.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://uconvertall.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Unit Master – Free Unit Converter">
+    <meta property="og:description" content="32 unit conversion tools + live currency exchange. Convert length, weight, temperature, speed, volume, cooking &amp; fuel units instantly in your browser.">
+    <meta property="og:url" content="https://uconvertall.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Unit Master">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Unit Master",
+      "url": "https://uconvertall.com/",
+      "description": "Free unit converter with 32 conversion tools across 8 categories including length, weight, temperature, speed, volume, cooking, fuel, and live currency exchange.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
     <!-- PWA Setup -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#080b14">
     <link rel="icon" type="image/svg+xml" href="icon.svg">
-    <link rel="apple-touch-icon" href="icon.svg">
-    
-    <!-- Google AdSense Verification -->
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4267788472666268" crossorigin="anonymous"></script>
 
     <style>
@@ -509,8 +538,19 @@
 </head>
 <body>
 <div class="glass-container">
-    <h1>📐 Unit Master</h1>
-    <div style="text-align: center;"><span class="sub">32 conversions + live currency · tap 📸 to share</span></div>
+    <h1>Unit Master</h1>
+    <div style="text-align: center;"><span class="sub">32 conversions + live currency &middot; tap 📸 to share</span></div>
+
+    <!-- AdSense: Top Banner -->
+    <div style="text-align:center; margin: 1rem 0;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4267788472666268"
+             data-ad-slot="5649348898"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
     <div class="tabs">
         <button class="tab-btn active" data-tab="tab1">📏 Length</button>
@@ -600,25 +640,78 @@
     <footer>✨ Snap 📸 to share · 32 conversions · Press <kbd style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:1px 5px;font-size:0.8em;">1–8</kbd> to jump tabs</footer>
 </div>
 
+<!-- AdSense: Mid Banner -->
+<div style="text-align:center; max-width:1400px; margin: 1.5rem auto; padding: 0 1rem;">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-4267788472666268"
+         data-ad-slot="1285538417"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
 <!-- ========== SEO & ADSENSE COMPLIANCE AREA ========== -->
 <div class="seo-content">
     <h2>About Unit Master</h2>
-    <p>Unit Master is a premium, lightning-fast unit conversion utility designed for professionals, students, and everyday use. Featuring 32 distinct conversion tools across 8 unified categories—including Length, Weight, Temperature, Speed, Volume, Cooking, and Fuel metrics—Unit Master provides exact, mathematically precise conversions in real-time. Whether you are scaling a recipe, calculating vehicle fuel efficiency, or converting imperial to metric units for engineering, our tool operates entirely locally in your browser for maximum privacy and performance.</p>
-    
+    <p>Unit Master is a free, lightning-fast unit converter designed for everyday use, students, engineers, cooks, and travelers. With 32 precision conversion tools across 8 categories — Length, Weight, Temperature, Speed, Volume, Cooking, Fuel &amp; Pressure, and live Currency exchange — everything runs directly in your browser with no installation, no account, and no data sent to any server. Unit Master works offline as a Progressive Web App (PWA) so you can install it on your phone or desktop and use it without an internet connection.</p>
+
     <h2>Live Currency Exchange</h2>
-    <p>In addition to physical measurements, Unit Master features a live, multi-currency exchange rates dashboard covering 20 global currencies (including USD, EUR, GBP, JPY, and more). Exchange rates are fetched seamlessly via real-time API integrations, ensuring you always have accurate financial conversion data when traveling or managing international e-commerce.</p>
-    
+    <p>Unit Master includes a real-time multi-currency exchange dashboard covering 20 global currencies: USD, EUR, GBP, JPY, CAD, AUD, CHF, CNY, INR, MXN, BRL, KRW, SGD, HKD, NOK, SEK, NZD, ZAR, AED, and THB. Rates are fetched from a live, open exchange rate API and update automatically every hour. Simply type an amount in any currency field and all others update instantly. If the API is unavailable, a built-in set of fallback rates ensures the converter always works.</p>
+
+    <h2>How to Use Unit Master</h2>
+    <p>Using Unit Master is simple. Select a category tab at the top (e.g., <strong>Length</strong>, <strong>Weight</strong>, or <strong>Currency</strong>). Each card shows two input fields — type a value into either field and the other updates automatically in real time. For currency, type any amount in any currency row and all 20 currencies update instantly. Use keyboard shortcuts <kbd style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:1px 4px;">1</kbd> through <kbd style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:1px 4px;">8</kbd> to jump between tabs instantly. Tap the 📸 Snap button on any card to copy a screenshot of that conversion to your clipboard for sharing.</p>
+
+    <div class="seo-divider"></div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h2>How do I convert miles to kilometers?</h2>
+    <p>Click the <strong>Temp &amp; Speed</strong> tab (tab 3) or directly use the <strong>Length</strong> tab. Enter your miles value in the Miles field and the kilometers value will update instantly. The formula is: <strong>1 mile = 1.60934 kilometers</strong>. So 10 miles = 16.09 km.</p>
+
+    <h2>How do I convert Celsius to Fahrenheit?</h2>
+    <p>Open the <strong>Temp &amp; Speed</strong> tab and enter your Celsius value. The Fahrenheit result appears immediately. The formula is: <strong>°F = (°C × 9/5) + 32</strong>. For example, 100°C = 212°F (boiling point of water).</p>
+
+    <h2>How do I convert pounds to kilograms?</h2>
+    <p>Click the <strong>Weight</strong> tab and type your value in the Pounds field. The kilogram equivalent updates in real time. The exact conversion is: <strong>1 pound = 0.453592 kilograms</strong>. So 150 lbs = 68.04 kg.</p>
+
+    <h2>How accurate are the currency exchange rates?</h2>
+    <p>Unit Master fetches live exchange rates from a public currency API updated daily. Rates reflect mid-market values and are suitable for reference and travel planning. For large financial transactions, always consult your bank or a licensed financial service for official rates.</p>
+
+    <h2>Does Unit Master work offline?</h2>
+    <p>Yes! Unit Master is a Progressive Web App (PWA). You can install it to your home screen on Android or iOS, and it will work fully offline for all unit conversions. The live currency tab requires an internet connection to fetch the latest rates, but falls back to built-in reference rates when offline.</p>
+
+    <h2>How do I convert gallons to liters?</h2>
+    <p>Open the <strong>Volume</strong> tab and enter the number of gallons. The liter result appears instantly. <strong>1 US gallon = 3.78541 liters</strong>. For example, a 20-gallon tank holds approximately 75.7 liters.</p>
+
+    <h2>How do I convert MPG to L/100km?</h2>
+    <p>Go to the <strong>Fuel &amp; Pressure</strong> tab and enter your MPG value. The L/100km equivalent updates automatically. The formula is: <strong>L/100km = 235.215 ÷ MPG</strong>. So 30 MPG ≈ 7.84 L/100km — a common fuel economy benchmark.</p>
+
+    <h2>Can I share a conversion result?</h2>
+    <p>Yes — tap the <strong>📸 Snap</strong> button in the top-right corner of any conversion card. This captures a clean screenshot of that card and copies it to your clipboard (or saves it to your device on mobile), ready to share via messages, social media, or email.</p>
+
+    <!-- AdSense: Content Unit -->
+    <div style="text-align:center; margin: 2rem 0;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4267788472666268"
+             data-ad-slot="1716783254"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
     <div class="seo-divider"></div>
 
     <h2>Terms of Service</h2>
-    <p>By using Unit Master ("the Tool"), you agree to these terms. The Tool is provided "as is" and "as available". While we strive for mathematical accuracy and live currency updates, we make no warranties regarding the absolute correctness of the calculations or financial rates provided. You agree not to hold the creators liable for any errors, omissions, or damages arising from the use of this free utility. You may use the Tool for personal, educational, and commercial conversion needs.</p>
+    <p>By using Unit Master ("the Tool"), you agree to these terms. The Tool is provided "as is" and "as available." While we strive for mathematical accuracy and provide live currency updates, we make no warranties regarding the absolute correctness of calculations or financial rates. You agree not to hold the creators liable for any errors, omissions, or damages arising from use of this free utility. You may use the Tool for personal, educational, and commercial conversion needs.</p>
 
     <h2>Privacy Policy</h2>
-    <p>Your privacy is important to us. Unit Master processes all unit conversions locally within your browser using JavaScript; no personal measurement data is transmitted to or stored on our servers. The live currency API requires fetching data from a third-party endpoint, which may log basic, anonymized web request data (like IP addresses) for standard routing purposes. <strong>Third-Party Vendors:</strong> We may use Google AdSense to display advertisements. Google uses cookies to serve ads based on a user's prior visits to this website or other websites. You may opt out of personalized advertising by visiting Google's <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Ads Settings</a>.</p>
-    
-    <p style="text-align: center; margin-top: 3rem; font-size: 0.75rem; opacity: 0.6;">© 2026 Unit Master. All rights reserved.</p>
+    <p>Your privacy matters. Unit Master performs all unit conversions locally in your browser — no measurement data is ever sent to or stored on any server. The live currency feature fetches data from a third-party API, which may log anonymized request data (such as IP addresses) for standard routing. <strong>Advertising:</strong> We use Google AdSense to display relevant advertisements. Google may use cookies to serve ads based on your prior visits to this or other websites. You can opt out of personalized advertising at Google's <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Ads Settings</a>.</p>
+
+    <p style="text-align: center; margin-top: 3rem; font-size: 0.75rem; opacity: 0.6;">© 2026 Unit Master · <a href="https://uconvertall.com/" style="color:#3b82f6;">uconvertall.com</a> · All rights reserved.</p>
     <div style="text-align: center; margin-top: 1.5rem; opacity: 0.8;">
-        <img src="https://hits.sh/uconvertall.com.svg?label=Visits&color=3b82f6&labelColor=0f172a" alt="Visits"/>
+        <img src="https://hits.sh/uconvertall.com.svg?label=Visits&color=3b82f6&labelColor=0f172a" alt="Visit counter for uconvertall.com"/>
     </div>
 </div>
 
